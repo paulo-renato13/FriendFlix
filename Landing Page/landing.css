@@ -1,0 +1,74 @@
+body {
+  display: grid;
+  background-color: black;
+  grid-template-columns: repeat(1,100%);
+  grid-template-rows: 20% 30% 45% 25% 20%;
+}
+
+.titulo {
+  font-family: 'Nova Slim', cursive;
+  justify-content: center;
+  text-align: center;
+  font-size: 3em;
+  color: #23B075
+}
+
+.imagens {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.argument {
+  font-family: 'Oswald', sans-serif;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.75em;
+  color: #23B075
+}
+
+.frases {
+  display: grid;
+  grid-template-columns: repeat(3,33%);
+  grid-template-rows: repeat(1,100%);
+}
+
+.frase {
+  font-family: 'Bowlby One SC', cursive;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.4em;
+  color: #23B075;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: repeat(1,100%);
+  justify-items: center;
+  align-items: center;
+}
+
+.social {
+  font-family: 'Oswald', sans-serif;
+  color: #23B075;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(4,25%);
+  grid-template-rows: repeat(1,100%);
+}
+
+.redes {
+  font-size: 1em;
+}
+
+button {
+  font-family: 'Bowlby One SC', cursive;
+  color: black;
+  background-color: #23B075;
+  padding: 15px 25px;
+  border: none;
+}
