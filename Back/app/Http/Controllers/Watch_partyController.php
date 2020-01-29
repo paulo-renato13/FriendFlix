@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App/Watch_party;
+use App\Watch_party;
 
 class Watch_partyController extends Controller
 {

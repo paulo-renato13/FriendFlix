@@ -3,20 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use App\User;
+use App\Http\Requests\UserRequest;
 
 class UserController extends Controller
 {
-    public function createUser(Request $request) {
+    public function createUser(UserRequest $request) {
 
-      $user = new User;
+    	$user = new User;
 
-      $user->name = $request->name;
-      $user->email = $request->email;
-      $user->password = $request->password;
-      $user->age = $request->age;
-      $user->followers = $request->followers;
-      $user->comments = $request->comments;
+		$user->name = $request->name;
+		$user->cpf = $request->cpf;
+    	$user->email = $request->email;
+    	$user->password = $request->password;
+    	$user->age = $request->age;
+      	$user->followers = $request->followers;
+      	$user->comments = $request->comments;
 
       $user->save();
 
@@ -43,7 +46,10 @@ class UserController extends Controller
   			}
   			if ($request->email) {
   				$user->email = $request->email;
-  			}
+			  }
+			if ($request->cpf) {
+				$user->cpf = $request->cpf;
+			}
   			if ($request->password) {
   				$user->password = $request->password;
   			}
