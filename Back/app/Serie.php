@@ -3,8 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\User;
 use App\Episode;
-use App\Favorite;
 
 class Serie extends Model
 {
@@ -13,6 +13,6 @@ class Serie extends Model
     }
 
     public function favorites() {
-      return $this->belongsToMany('App\Favorite');
+      return $this->belongsToMany('App\User','favorites');
     }
 }

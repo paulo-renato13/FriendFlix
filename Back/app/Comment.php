@@ -8,7 +8,7 @@ use App\Episode;
 
 class Comment extends Model
 {
-    public function usuario() {
+    public function user() {
       return $this->belongsTo('App\User');
     }
 

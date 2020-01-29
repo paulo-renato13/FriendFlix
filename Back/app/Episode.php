@@ -13,11 +13,11 @@ class Episode extends Model
       return $this->belongsTo('App\Serie');
     }
 
-    public function comments()) {
+    public function comments() {
       return $this->hasMany('App\Comment');
     }
 
-    public function watch_parties()) {
+    public function watch_parties() {
       return $this->hasMany('App\Watch_party');
     }
 }

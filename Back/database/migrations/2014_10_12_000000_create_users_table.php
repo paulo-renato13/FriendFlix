@@ -21,8 +21,6 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->integer('age')->unsigned();
             $table->string('cpf')->unique();
-            $table->integer('followers')->unsigned()->default(0);
-            $table->integer('comments')->unsigned()->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

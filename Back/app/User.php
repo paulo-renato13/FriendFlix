@@ -5,12 +5,9 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Serie;
 use App\Comment;
 use App\Watch_party;
-use App\Follow;
-use App\Favorite;
-use App\Invitation;
-use App\Participation;
 
 class User extends Authenticatable
 {
@@ -51,20 +48,16 @@ class User extends Authenticatable
       return $this->hasMany('App\Watch_party');
     }
 
-    public function followers() {
-      return $this->belongsToMany('App\Follow');
-    }
-
     public function favorites() {
-      return $this->belongsToMany('App\Favorite');
+      return $this->belongsToMany('App\Serie','favorites');
     }
 
-    public function invitations() {
-      return $this->belongsToMany('App\Invitation');
+    public function follow($user_id) {
+      return $this->follow()->attach($user_id);
     }
 
-    public function participations() {
-      return $this->belongsToMany('App\Participation');
+    public function unfollow($user_id) {
+      return $this->unfollow()->detach($user_id);
     }
 
 }

@@ -3,10 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App/User;
-use App/Episode;
-use App/Invitation;
-use App/Participation;
+use App\User;
+use App\Episode;
 
 class Watch_party extends Model
 {
@@ -18,11 +16,4 @@ class Watch_party extends Model
       return $this->belongsTo('App\Episode');
     }
 
-    public function invitations() {
-      return $this->belongsToMany('App\Invitation');
-    }
-
-    public function participations() {
-      return $this->belongsToMany('App\Participation')
-    }
 }

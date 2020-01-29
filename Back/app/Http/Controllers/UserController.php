@@ -75,6 +75,16 @@ class UserController extends Controller
     public function deleteUser($id) {
   		User::destroy($id);
   		return response()->json(['Usuário deletado']);
-    }
+	}
+	
+	public function follow($user_id) {
+		$user = User::find($user_id);
+		$user->follow($user_id);
+	}
+
+	public function unfollow($user_id) {
+		$user = User::find($user_id);
+		$user->detach($user_id);
+	}
 
 }
