@@ -5,6 +5,9 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+
+use Laravel\Passport\HasApiTokens; //adicionar o "use" junto aos outros imports
+
 use App\Serie;
 use App\Comment;
 use App\Watch_party;
@@ -12,6 +15,7 @@ use App\Watch_party;
 class User extends Authenticatable
 {
     use Notifiable;
+    use HasApiTokens;
 
     /**
      * The attributes that are mass assignable.

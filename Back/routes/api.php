@@ -47,26 +47,10 @@ Route::post('createWatch_party','Watch_partyController@createWatch_party');
 Route::put('updateWatch_party/{id}','Watch_partyController@updateWatch_party');
 Route::delete('deleteWatch_party/{id}','Watch_partyController@deleteWatch_party');
 
-Route::get('listFavorite','FavoriteController@listFavorite');
-Route::get('showFavorite/{id}','FavoriteController@showFavorite');
-Route::post('createFavorite','FavoriteController@createFavorite');
-Route::put('updateFavorite/{id}','FavoriteController@updateFavorite');
-Route::delete('deleteFavorite/{id}','FavoriteController@deleteFavorite');
+Route::group(['middleware'=>'auth:api'], function() {
+    Route::post('logout', 'API\PassportController@logout');
+    Route::post('getDetails', 'API\PassportController@getDetails');
+});
 
-Route::get('listFollow','FollowController@listFollow');
-Route::get('showFollow/{id}','FollowController@showFollow');
-Route::post('createFollow','FollowController@createFollow');
-Route::put('updateFollow/{id}','FollowController@updateFollow');
-Route::delete('deleteFollow/{id}','FollowController@deleteFollow');
-
-Route::get('listInvitation','InvitationController@listInvitation');
-Route::get('showInvitation/{id}','InvitationController@showInvitation');
-Route::post('createInvitation','InvitationController@createInvitation');
-Route::put('updateInvitation/{id}','InvitationController@updateInvitation');
-Route::delete('deleteInvitation/{id}','InvitationController@deleteInvitation');
-
-Route::get('listParticipation','ParticipationController@listParticipation');
-Route::get('showParticipation/{id}','ParticipationController@showParticipation');
-Route::post('createParticipation','ParticipationController@createParticipation');
-Route::put('updateParticipation/{id}','ParticipationController@updateParticipation');
-Route::delete('deleteParticipation/{id}','ParticipationController@deleteParticipation');
+Route::post('register','API\PassportController@register');
+Route::post('login','API\PassportController@login');

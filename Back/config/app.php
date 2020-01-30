@@ -176,7 +176,10 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         /*Laravel pt-br*/
-        LaravelLegends\PtBrValidator\ValidatorProvider::class
+        LaravelLegends\PtBrValidator\ValidatorProvider::class,
+
+        /*Passport*/
+        Laravel\Passport\PassportServiceProvider::class,
 
     ],
 

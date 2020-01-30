@@ -18,8 +18,6 @@ class UserController extends Controller
     	$user->email = $request->email;
     	$user->password = $request->password;
     	$user->age = $request->age;
-      	$user->followers = $request->followers;
-      	$user->comments = $request->comments;
 
       $user->save();
 
