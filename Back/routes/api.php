@@ -49,8 +49,9 @@ Route::delete('deleteWatch_party/{id}','Watch_partyController@deleteWatch_party'
 
 Route::group(['middleware'=>'auth:api'], function() {
     Route::post('logout', 'API\PassportController@logout');
-    Route::post('getDetails', 'API\PassportController@getDetails');
+    Route::post('getDetails', 'API\PassportController@getDetails')->middleware('admin');
 });
 
 Route::post('register','API\PassportController@register');
 Route::post('login','API\PassportController@login');
+Route::get('is_admin/{id}', 'UserController@is_admin')->middleware('admin');

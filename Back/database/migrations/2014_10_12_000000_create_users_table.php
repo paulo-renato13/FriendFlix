@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->integer('age')->unsigned();
             $table->string('cpf')->unique();
+            $table->boolean('admin')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });

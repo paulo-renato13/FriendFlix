@@ -85,4 +85,13 @@ class UserController extends Controller
 		$user->detach($user_id);
 	}
 
+	public function is_admin($id) {
+		$user = User::find($user_id);
+		if($user->$admin) {
+			return True;
+		} else {
+			return False;
+		}
+	}
+
 }
