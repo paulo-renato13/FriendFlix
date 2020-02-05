@@ -22,6 +22,7 @@ Route::get('showUser/{id}','UserController@showUser');
 Route::post('createUser','UserController@createUser');
 Route::put('updateUser/{id}','UserController@updateUser');
 Route::delete('deleteUser/{id}','UserController@deleteUser');
+Route::get('showPhoto/{id}', 'UserController@showPhoto');
 
 Route::get('listSerie','SerieController@listSerie');
 Route::get('showSerie/{id}','SerieController@showSerie');

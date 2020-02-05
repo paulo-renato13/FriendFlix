@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('cpf')->unique();
             $table->integer('followers')->unsigned()->default(0);
             $table->integer('comments')->unsigned()->default(0);
+            $table->string('photo')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

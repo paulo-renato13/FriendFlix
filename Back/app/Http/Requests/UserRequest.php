@@ -33,7 +33,8 @@ class UserRequest extends FormRequest
 			'age' => 'integer|min:13',
 			'followers' => 'integer|min:0',
             'comments' => 'integer|min:0',
-            'cpf' => 'cpf' 
+            'photo' =>'required|file|image|mimes:jpeg,png,gif,webp|max:2048'
+                
         ];
        
     }
